@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-2">
+    <input type="checkbox" aria-label="..." [(ngModel)]="file.selected" (change)="onSelect()">
+  </div>
+  <div class="col-xs-10">
+    <div *ngIf="file.edited">
+      <input type="text" [(ngModel)]="editedName">
+      <button class="btn btn-default btn-sm" (click)="onSave()">Save</button>
+      <button class="btn btn-warning btn-sm" (click)="onCancel()">Cancel</button>
+    </div>
+
+    <div *ngIf="!file.edited">{{file.name}}</div>
+  </div>
+</div>
