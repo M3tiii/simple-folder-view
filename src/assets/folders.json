@@ -1,0 +1,4 @@
+[{ "name":"first folder", "files":[{"name":"readme.md"}, {"name":"angular2.js"}, {"name":"folder-view.html"}] },
+ { "name":"main folder", "files":[{"name":"index.html"}, {"name":"main.js"}]},
+ { "name":"something", "files":[{"name":"shoppinglist.txt"}] },
+ { "name":"another folder", "files":[{"name":"photo.png"}] }]
