@@ -8,8 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FileViewComponent implements OnInit {
 
-  file: any;
-  editedName: string;
+  private file: any;
+  private editedName: string;
 
   @Output() selectEmitter = new EventEmitter();
   @Output() deleteEmitter = new EventEmitter();
@@ -17,21 +17,21 @@ export class FileViewComponent implements OnInit {
 
   constructor() { }
 
-  onSelect(event) {
+  private onSelect(event) {
     this.selectEmitter.emit(this.file);
   }
 
-  onSave() {
+  private onSave() {
     if (this.editedName) {
       this.file.name = this.editedName;
       this.file.edited = false;
       this.file.selected = false;
     } else {
-      this.modalEmitter.emit({ title: "WARNING", msg: "File name can not by empty." });
+      this.modalEmitter.emit({ title: "WARNING", msg: "File name can not by empty.", confirm: false });
     }
   }
 
-  onCancel() {
+  private onCancel() {
     this.editedName = this.file.name;
     this.file.edited = false;
     if (!this.file.name) {
