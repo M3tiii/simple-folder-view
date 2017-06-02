@@ -5,7 +5,6 @@
     </div>
   </div>
 </div>
-
 <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -17,6 +16,10 @@
       </div>
       <div class="modal-body">
         {{modal?.msg}}
+        <div *ngIf="modal?.confirm">
+          <button class="btn btn-warning" (click)="modalConfirm()">Yes</button>
+          <button class="btn btn-primary" (click)="hideChildModal()">No</button>
+        </div>
       </div>
     </div>
   </div>
