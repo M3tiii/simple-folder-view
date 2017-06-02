@@ -8,13 +8,11 @@ import { Folder } from '../models/folder';
 @Injectable()
 export class LoaderService {
 
-  folders: Folder[];
+  public folders: Folder[];
 
-  constructor(private http: Http) {
-    // this.fetch();
+  constructor(private http: Http) { }
 
-  }
-  fetch(): Promise<any> {
+  public fetch(): Promise<any> {
     return this.http.get('./assets/folders.json')
       .toPromise()
       .then((res) => {
@@ -22,15 +20,7 @@ export class LoaderService {
       });
   }
 
-  addFolder(folder: Folder) {
-    // this.folders.push(folder);
-  }
-
-  removeFile() {
-
-  }
-
-  get(): any {
-    // return this.folder;
+  public save(): any {
+    // post modified json to server
   }
 }
